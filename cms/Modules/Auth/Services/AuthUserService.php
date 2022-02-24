@@ -15,5 +15,16 @@ class AuthUserService extends CoreUserService implements AuthUserServiceContract
 	    parent::__construct($repository);
 
 	    $this->repository = $repository;
+        
 	}
+
+	public function getUser($id)
+    {
+        return $this->repository->getUser($id);
+    }
+
+    public function getAllUsers()
+    {
+        return $this->repository->all();
+    }
 }

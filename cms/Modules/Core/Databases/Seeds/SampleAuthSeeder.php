@@ -53,6 +53,12 @@ class SampleAuthSeeder extends Seeder
                 'password' => bcrypt('00000000'),
                 'email_verified_at' => Carbon::now()->timestamp
             ],
+            [
+                'name' => 'CMS Đào Thế Anh',
+                'email' => 'daotheanh@caerux.cms',
+                'password' => bcrypt('00000000'),
+                'email_verified_at' => Carbon::now()->timestamp
+            ],
         ];
 
         // Create permissions

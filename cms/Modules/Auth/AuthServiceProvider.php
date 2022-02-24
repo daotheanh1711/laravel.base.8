@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Gate;
 use Spatie\Permission\Middlewares\PermissionMiddleware;
 use Spatie\Permission\Middlewares\RoleMiddleware;
 use Spatie\Permission\Middlewares\RoleOrPermissionMiddleware;
+use Cms\Modules\Auth\Middlewares\RequireAdmin;
 
 class AuthServiceProvider extends CmsServiceProvider
 {
@@ -21,6 +22,10 @@ class AuthServiceProvider extends CmsServiceProvider
     protected $routeMiddleware = [
         'cms.authenticated' => RedirectIfAuthenticated::class,
         'cms.verified' => EnsureEmailIsVerified::class,
+        'role' => RoleMiddleware::class,
+        'permission' => PermissionMiddleware::class,
+        'role_or_permission' => RoleOrPermissionMiddleware::class,
+        'require_admin'  => RequireAdmin::class,
         'role' => RoleMiddleware::class,
         'permission' => PermissionMiddleware::class,
         'role_or_permission' => RoleOrPermissionMiddleware::class,
